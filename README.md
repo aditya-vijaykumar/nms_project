@@ -1,2 +1,2 @@
 # NMS Project 
-This is a NMS Project using Java Spring Boot and MongoDB. This is a monorepo containing the code for controller backend as well as the device backend.
+This is a NMS Project developed towards the Full Stack Development Course, using Java Spring Boot and MongoDB. This is a monorepo containing the code for controller backend as well as the device backend.
