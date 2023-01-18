@@ -11,16 +11,16 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "devices")
 public class Device {
   @Id
-  private String id;
-  private String name;
-  private String type;
-  private String location;
-  private String ip;
-  private String mac;
-  private String version;
-  private Map<String, String> properties;
-  private List<String> services;
-  private List<String> signals;
+  protected String id;
+  protected String name;
+  protected String type;
+  protected String location;
+  protected String ip;
+  protected String mac;
+  protected String version;
+  protected Map<String, String> properties;
+  protected List<String> services;
+  protected List<String> signals;
 
   public Device(String name, String type, String location, String ip, String mac, String version) {
     this.name = name;
