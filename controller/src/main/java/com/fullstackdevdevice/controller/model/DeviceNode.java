@@ -1,15 +1,20 @@
 package com.fullstackdevdevice.controller.model;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
-public class DeviceNode extends Device {
-  private List<ConnectionNode> connections;
-  
-  public DeviceNode(String name) {
-      this.connections = new ArrayList<>();
-  }
+import org.springframework.data.annotation.Id;
+
+public class DeviceNode {
+  @Id
+  protected String id;
+  protected String name;
+  protected String type;
+  protected String location;
+  protected String ip;
+  protected String mac;
+  protected String version;
+  private List<ConnectionNode> connections = new ArrayList<>();
 
   public DeviceNode(String name, String type, String location, String ip, String mac, String version) {
     this.name = name;
@@ -18,19 +23,72 @@ public class DeviceNode extends Device {
     this.ip = ip;
     this.mac = mac;
     this.version = version;
-    this.services = new ArrayList<>();
-    this.signals = new ArrayList<>();
-    this.properties = new HashMap<>();
-    this.connections = new ArrayList<>();
+  }
+
+  public DeviceNode() {
+  }
+
+  public String getId() {
+    return id;
+  }
+
+  public void setId(String id) {
+    this.id = id;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public String getType() {
+    return type;
+  }
+
+  public void setType(String type) {
+    this.type = type;
+  }
+
+  public String getLocation() {
+    return location;
+  }
+
+  public void setLocation(String location) {
+    this.location = location;
+  }
+
+  public String getIp() {
+    return ip;
+  }
+
+  public void setIp(String ip) {
+    this.ip = ip;
+  }
+
+  public String getMac() {
+    return mac;
+  }
+
+  public void setMac(String mac) {
+    this.mac = mac;
+  }
+
+  public String getVersion() {
+    return version;
+  }
+
+  public void setVersion(String version) {
+    this.version = version;
   }
 
   public void addConnection(DeviceNode device, int weight) {
-      this.connections.add(new ConnectionNode(device, weight));
+    connections.add(new ConnectionNode(device, weight));
   }
-  // other methods
 
   public List<ConnectionNode> getConnections() {
     return connections;
   }
-
 }

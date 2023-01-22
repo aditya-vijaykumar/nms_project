@@ -38,7 +38,7 @@ public class DeviceServerController {
 		return deviceServerService.saveDeviceServer(device);
 	}
 
-	@PostMapping("/delete/${deviceId}")
+	@PostMapping("/delete/{deviceId}")
 	public boolean deleteDeviceServer(@PathVariable String deviceId) {
 		LOG.info("Saving connection.");
 		deviceServerService.deleteDeviceServerById(

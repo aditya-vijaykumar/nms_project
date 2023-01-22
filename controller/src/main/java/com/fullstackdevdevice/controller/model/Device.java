@@ -1,10 +1,5 @@
 package com.fullstackdevdevice.controller.model;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -18,9 +13,6 @@ public class Device {
   protected String ip;
   protected String mac;
   protected String version;
-  protected Map<String, String> properties;
-  protected List<String> services;
-  protected List<String> signals;
 
   public Device(String name, String type, String location, String ip, String mac, String version) {
     this.name = name;
@@ -29,9 +21,6 @@ public class Device {
     this.ip = ip;
     this.mac = mac;
     this.version = version;
-    this.services = new ArrayList<>();
-    this.signals = new ArrayList<>();
-    this.properties = new HashMap<>();
   }
 
   public Device() {
@@ -91,30 +80,6 @@ public class Device {
 
   public void setVersion(String version) {
     this.version = version;
-  }
-
-  public Map<String, String> getProperties() {
-    return properties;
-  }
-
-  public void setProperties(Map<String, String> properties) {
-    this.properties = properties;
-  }
-
-  public List<String> getServices() {
-    return services;
-  }
-
-  public void setServices(List<String> services) {
-    this.services = services;
-  }
-
-  public List<String> getSignals() {
-    return signals;
-  }
-
-  public void setSignals(List<String> signals) {
-    this.signals = signals;
   }
 
 }

@@ -1,7 +1,5 @@
 package com.fullstackdevdevice.controller.model;
 
-import java.util.List;
-
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -11,7 +9,6 @@ public class Connection {
     private String id;
     private String sourceDeviceId;
     private String destinationDeviceId;
-    private List<String> connectedDevices;
     
     public Connection() {}
 
@@ -39,11 +36,4 @@ public class Connection {
         this.destinationDeviceId = destinationDeviceId;
     }
 
-    public List<String> getConnectedDevices() {
-        return connectedDevices;
-    }
-
-    public void setConnectedDevices(List<String> connectedDevices) {
-        this.connectedDevices = connectedDevices;
-    }
 }
