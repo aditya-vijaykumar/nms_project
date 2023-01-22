@@ -1,7 +1,5 @@
 package com.fullstackdevdevice.device.model;
 
-import java.util.List;
-
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -9,11 +7,14 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Connection {
     @Id
     private String id;
-    private String sourceDeviceId;
-    private String destinationDeviceId;
-    private List<String> connectedDevices;
+    private String sourceDevice;
+    private String destinationDevice;
     
     public Connection() {}
+    public Connection(String sourceDeviceId,String destinationDeviceId ) {
+        this.sourceDevice = sourceDeviceId;
+        this.destinationDevice = destinationDeviceId;
+    }
 
     public String getId() {
         return id;
@@ -24,26 +25,18 @@ public class Connection {
     }
 
     public String getSourceDeviceId() {
-        return sourceDeviceId;
+        return sourceDevice;
     }
 
     public void setSourceDeviceId(String sourceDeviceId) {
-        this.sourceDeviceId = sourceDeviceId;
+        this.sourceDevice = sourceDeviceId;
     }
 
     public String getDestinationDeviceId() {
-        return destinationDeviceId;
+        return destinationDevice;
     }
 
     public void setDestinationDeviceId(String destinationDeviceId) {
-        this.destinationDeviceId = destinationDeviceId;
-    }
-
-    public List<String> getConnectedDevices() {
-        return connectedDevices;
-    }
-
-    public void setConnectedDevices(List<String> connectedDevices) {
-        this.connectedDevices = connectedDevices;
+        this.destinationDevice = destinationDeviceId;
     }
 }

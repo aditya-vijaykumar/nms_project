@@ -22,7 +22,7 @@ public class AlarmController {
 		this.alarmRepository = alarmRepository;
 	}
 
-	@GetMapping("/")
+	@GetMapping("/all")
 	public List<Alarm> getAllAlarms() {
 		LOG.info("Getting all alarms.");
 		return alarmRepository.findAll();

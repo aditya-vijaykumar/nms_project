@@ -38,7 +38,7 @@ public class NetworkServiceController {
 		return networkRepository.save(networkService);
 	}
 
-	@PostMapping("/delete/${connectionId}")
+	@PostMapping("/delete/{connectionId}")
 	public boolean deleteNetworkService(@PathVariable String networkServiceId) {
 		LOG.info("Saving connection.");
 		networkRepository.deleteById(

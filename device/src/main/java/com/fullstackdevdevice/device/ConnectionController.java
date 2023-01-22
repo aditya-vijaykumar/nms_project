@@ -15,7 +15,7 @@ import com.fullstackdevdevice.device.model.Connection;
 import com.fullstackdevdevice.device.repository.ConnectionRepository;
 
 @RestController
-@RequestMapping(value = "/connection")
+@RequestMapping(value = "/connections")
 public class ConnectionController {
   
   private final Logger LOG = LoggerFactory.getLogger(getClass());
@@ -38,7 +38,7 @@ public class ConnectionController {
 		return connectionRepository.save(conn);
 	}
 
-	@PostMapping("/delete/${connectionId}")
+	@PostMapping("/delete/{connectionId}")
 	public boolean deleteConnection(@PathVariable String connectionId) {
 		LOG.info("Saving connection.");
 		connectionRepository.deleteById(
